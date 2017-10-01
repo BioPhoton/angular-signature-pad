@@ -1,0 +1,54 @@
+<div id="main-container" class="container-fluid">
+  <nav id="main-menu" class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="#">Angular Signature Pad</a>
+    <button class="navbar-toggler d-lg-none"
+      type="button"
+      data-toggle="collapse"
+      data-target="#mainNavbar"
+      aria-controls="mainNavbar"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      (click)="toggleNav()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class=" navbar-collapse" id="mainNavbar"
+      [ngClass]="{collapse:navBarCollapsed}">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['demo']"
+            (click)="toggleNav(true)">Demo</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['signature-pad']"
+            (click)="toggleNav(true)">SignaturePad</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['signature-pad-control']"
+            (click)="toggleNav(true)">Form Control</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['signature-pad-control-validation']"
+            (click)="toggleNav(true)">Validation</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['signature-pad-configuration']"
+            (click)="toggleNav(true)">Configuration</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['signature-pad-card']"
+            (click)="toggleNav(true)">SignaturePad Card</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['signature-pad-card-group']"
+            (click)="toggleNav(true)">SignaturePad Card Group</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="main-content" class="row">
+    <main id="main-" class="col">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

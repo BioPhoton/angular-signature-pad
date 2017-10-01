@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import "app/layout/layout";
+
+@import "../node_modules/angular-signature-pad/styles";
+
+.signature-pad-canvas {
+  border: 2px dashed $signature-pad-border;
+}

@@ -1,0 +1,16 @@
+<h1>
+  SignaturePad
+</h1>
+
+<signature-pad (valueChange)="setLastChange($event)" #sigPad></signature-pad>
+
+<b>value:</b>
+<pre>
+  {{sigPad.value | json}}
+</pre>
+<b>valueChanged to:</b>
+<pre>
+  {{lastChange | json}}
+</pre>
+
+<button class="btn btn-outline-secondary" (click)="sigPad.clear()">Clear</button>

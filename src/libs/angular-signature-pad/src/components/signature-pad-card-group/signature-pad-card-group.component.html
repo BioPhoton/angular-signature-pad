@@ -1,0 +1,30 @@
+<div class="signature-pad-card" [ngClass]="theme" [formGroup]="group">
+
+  <div class="signature-pad">
+    <signature-pad-control [formControlName]="config.name" #signaturePad>
+    </signature-pad-control>
+  </div>
+  <div class="line-break"></div>
+  <div class="actions">
+    <button class="clear" (click)="clear()">
+      {{'Clear Signature'}}
+    </button>
+  </div>
+
+  <div class="feedback">
+
+    <!-- initial message -->
+    <div *ngIf="control?.untouched && control?.pristine">Sign above!</div>
+
+    <!-- error messages -->
+    <div *ngIf="control?.dirty && control?.invalid">
+      <span class="form-text text-danger" *ngFor="let error of (control?.errors | objToArray)">
+       {{error.value.message}}
+      </span>
+    </div>
+
+    <!-- valid message -->
+    <div *ngIf="control?.dirty && control.valid">Thank you!</div>
+
+  </div>
+</div>

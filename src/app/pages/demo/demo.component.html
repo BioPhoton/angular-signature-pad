@@ -1,0 +1,24 @@
+<h1>
+  Basic Implementation of the angular signature pad library
+</h1>
+
+<div [formGroup]="testForm" class="row">
+
+  <div class="form-group col">
+    <label class="form-control-label">Firstname</label>
+    <input type="text" autocomplete="false"
+      class="form-control"
+      name="firstName"
+      formControlName="firstName">
+  </div>
+
+  <div class="form-group col">
+    <label class="form-control-label">Lastname</label>
+    <input type="text" autocomplete="false"
+      class="form-control"
+      name="lastName"
+      formControlName="lastName">
+  </div>
+
+  <signature-pad-card  class="form-group col-12" formControlName="signature"></signature-pad-card>
+</div>

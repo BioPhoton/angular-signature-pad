@@ -1,0 +1,32 @@
+<h1>
+  SignaturePad Control
+</h1>
+
+<div class="row">
+  <div class="col">
+    <form [formGroup]="testForm">
+
+      <signature-pad-control formControlName="signature"
+        #sigPad></signature-pad-control>
+
+      <br/>
+
+      <button class="btn btn-outline-secondary" type="reset">Reset Form</button>
+      <button class="btn btn-outline-secondary" type="button" (click)="sigPad.clear()">Clear
+        Component
+      </button>
+      <button class="btn btn-outline-secondary" type="button" (click)="fill()">Fill</button>
+
+    </form>
+  </div>
+  <div class="col">
+
+    <control-state [control]="testForm.get('signature')">
+      SignaturePad Control State
+    </control-state>
+
+  </div>
+</div>
+<br/>
+<b>Component value:</b>
+<pre>{{sigPad.value | json}}</pre>

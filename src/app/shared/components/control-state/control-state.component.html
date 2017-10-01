@@ -1,0 +1,93 @@
+<div class="card">
+  <div class="card-header">
+    <h4>
+      <ng-content></ng-content>
+    </h4>
+  </div>
+
+  <ul *ngIf="control.errors"
+    class="card-block {{'bg-'+ errorColor}}">
+    <li *ngFor="let error of getErrors()" class="text-white">
+      <b>{{error.name}}</b>
+    </li>
+  </ul>
+
+  <div class="card-block col">
+    <div class="row">
+      <div class="col-3"><b>value</b></div>
+      <div
+        class="col-9 text-primary control-value">
+        <b>{{control.value | json}}</b>
+      </div>
+
+      <div class="col-3"><b>valid</b></div>
+      <div
+        class="col-3 {{control.valid?'text-success':'text-danger'}}">
+        {{control.valid }}
+      </div>
+
+      <div class="col-3"><b>invalid</b></div>
+      <div
+        class="col-3 {{control.invalid?'text-success':'text-danger'}}">
+        {{control.invalid }}
+      </div>
+
+      <div class="col-3"><b>status</b></div>
+      <div class="col-3" [ngClass]="{
+                'text-success': control.status==='VALID',
+                'text-danger': control.status==='INVALID',
+                'text-info': control.status==='PENDING'
+                }">{{control.status}}
+      </div>
+
+      <div class="col-3"><b>pending</b></div>
+      <div
+        class="col-3 {{control.pending?'text-success':'text-danger'}}">
+        {{control.pending}}
+      </div>
+
+      <div class="col-3"><b>pristine</b></div>
+      <div
+        class="col-3 {{control.pristine?'text-success':'text-danger'}}">
+        {{control.pristine}}
+      </div>
+      <div class="col-3"><b>dirty</b></div>
+      <div
+        class="col-3 {{control.dirty?'text-success':'text-danger'}}">
+        {{control.dirty}}
+      </div>
+
+      <div class="col-3"><b>touched</b></div>
+      <div
+        class="col-3 {{control.touched?'text-success':'text-danger'}}">
+        {{control.touched}}
+      </div>
+
+      <div class="col-3"><b>untouched</b></div>
+      <div
+        class="col-3 {{control.untouched?'text-success':'text-danger'}}">
+        {{control.untouched}}
+      </div>
+
+      <div class="col-3"><b>focus</b></div>
+      <div
+        class="col-3 {{control?.focus?'text-success':'text-danger'}}">
+        {{control?.focus}}
+      </div>
+
+      <div class="col-3"><b>disabled</b></div>
+      <div
+        class="col-3 {{control.disabled?'text-success':'text-danger'}}">
+        {{control.disabled}}
+      </div>
+
+      <div class="col-12"><b>errors</b></div>
+      <div
+        class="col-12 text-danger">
+        <pre>{{control.errors | json}}</pre>
+      </div>
+
+    </div>
+
+  </div>
+</div>

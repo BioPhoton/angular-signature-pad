@@ -1,0 +1,88 @@
+$signature-pad-color: rgba(0, 0, 0, 0.4);
+
+$signature-pad-border: rgba(0, 0, 0, 0.08);
+
+$signature-pad-background-light: rgba(255, 255, 255, 1);
+$signature-pad-background-dark: rgba(252, 252, 252, 1);
+
+$signature-pad-shadow-dark: $signature-pad-color;
+$signature-pad-shadow-light: $signature-pad-border;
+
+$signature-clear-button-width: 150px;
+$signature-clear-button-height: 60px;
+
+$signature-space: 15px;
+
+.signature-pad {
+  width: 100%;
+  min-height: 200px;
+  display: block;
+}
+
+.signature-pad-card {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+
+  .signature-pad {
+    width: 100%;
+  }
+
+  .actions {
+    flex: 1 1 auto;
+  }
+
+  .feedback {
+    flex: 1 1 auto;
+  }
+}
+
+.signature-pad-card.raised {
+  border: 1px solid $signature-pad-border;
+  background-color: $signature-pad-background-dark;
+  box-shadow: 0 1px 4px $signature-pad-shadow-dark, 0 0 40px $signature-pad-shadow-light inset;
+  border-radius: 4px;
+  padding: $signature-space * 2;
+
+  .signature-pad {
+    min-height: 400px;
+    width: 100%;
+    margin-bottom: $signature-space;
+  }
+
+  .signature-pad-canvas {
+    border: 2px dashed $signature-pad-border;
+    background-color: $signature-pad-background-light;
+  }
+
+  .actions {
+    flex: 0 1 auto;
+    padding-right: $signature-space;
+
+    .clear {
+      height: $signature-clear-button-height;
+      width: $signature-clear-button-width;
+      line-height: $signature-space * 3;
+      color: rgba(0, 0, 0, 0.6);
+      text-shadow: 1px 1px 0px #fcfcfc;
+      border-color: $signature-pad-shadow-dark;
+      border-radius: 4px;
+      border-width: 1px;
+      box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .feedback {
+    display:flex;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 0px #fcfcfc;
+    font-size: 28px;
+    text-align: right;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}

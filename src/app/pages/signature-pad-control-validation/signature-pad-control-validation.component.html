@@ -1,0 +1,58 @@
+<h1>
+  SignaturePad Control Validation
+</h1>
+
+
+<form [formGroup]="testForm">
+  <div class="row">
+    <div class="col-4">
+      <div class="btn-group-vertical"  style="width: 100%">
+        <button class="btn btn-outline-secondary" (click)="assignValidSignature()">
+          assignValidSignature
+        </button>
+        <button class="btn btn-outline-secondary" (click)="assignNonArray()">
+          assignNonArray
+        </button>
+        <button class="btn btn-outline-secondary" (click)="assignArrayOfNonArrays()">
+          assignArrayOfNonArrays
+        </button>
+        <button class="btn btn-outline-secondary"
+          (click)="assignArrayArraysOfNonObjects()">
+          assignArrayArraysOfNonObjects
+        </button>
+        <button class="btn btn-outline-secondary" (click)="assignSignatureOf1Line()">
+          assignSignatureOf1Line
+        </button>
+        <button class="btn btn-outline-secondary"
+          (click)="assignSignatureOf2LineEach2Points()">
+          assignSignatureOf2LineEach2Points
+        </button>
+      </div>
+
+      <br/>
+      <br/>
+
+      <div class="btn-group-vertical" style="width: 100%">
+        <button class="btn btn-outline-secondary" type="reset">Reset</button>
+      </div>
+
+      <b>Value: </b><br/>
+      <pre>{{signatureControl.value | json}}</pre>
+    </div>
+    <div class="col-8">
+      <signature-pad-control style="width: 100%; height:400px"
+        formControlName="signature" #sigPad></signature-pad-control>
+
+      <span class="form-text text-danger"
+        *ngIf="signatureControl.hasError('isArray')">Signature is no array</span>
+      <span class="form-text text-danger"
+        *ngIf="signatureControl.hasError('consistOfArrays')">Signature don't consist of array</span>
+      <span class="form-text text-danger"
+        *ngIf="signatureControl.hasError('consistOfObjects')">Signature segments don't consist of objects</span>
+      <span class="form-text text-danger"
+        *ngIf="signatureControl.hasError('minLines')">Signature have wrong line coun't</span>
+      <span class="form-text text-danger"
+        *ngIf="signatureControl.hasError('minPointsInNLines')">Signature have wrong point count in segments</span>
+    </div>
+  </div>
+</form>
