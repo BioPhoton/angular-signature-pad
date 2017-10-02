@@ -6,6 +6,7 @@ import { SignaturePadConfigurationComponent } from './signature-pad-configuratio
 import {SharedModule} from '../../shared/shared.module';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AngularSignaturePadModule} from 'angular-signature-pad';
+import {GlobalSignaturePadConfig} from 'angular-signature-pad';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import {AngularSignaturePadModule} from 'angular-signature-pad';
   ],
   declarations: [SignaturePadConfigurationComponent],
   providers: [
-    // { provide: GlobalSignaturePadConfig, }
+     { provide: GlobalSignaturePadConfig, useValue: { penColor: '#f00'}}
   ]
 })
 export class SignaturePadConfigurationModule { }
