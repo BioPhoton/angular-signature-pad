@@ -100,4 +100,9 @@ export class SignaturePadControlComponent extends SignaturePadComponent implemen
     this.onModelChange(signatureData);
   }
 
+  clear() {
+    super.clear();
+    this.onModelChange([]);
+  }
+
 }

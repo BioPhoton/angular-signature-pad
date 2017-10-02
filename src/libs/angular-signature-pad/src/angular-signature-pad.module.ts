@@ -1,13 +1,16 @@
 import {CommonModule} from '@angular/common';
 import {ModuleWithProviders, NgModule} from '@angular/core';
+import {ReactiveFormsModule} from '@angular/forms';
+import {SignaturePadCardGroupComponent} from './components/signature-pad-card-group/signature-pad-card-group.component';
 import {SignaturePadCardComponent} from './components/signature-pad-card/signature-pad-card.component';
 import {SignaturePadControlComponent} from './components/signature-pad-control/signature-pad-control.component';
 import {SignaturePadComponent} from './components/signature-pad/signature-pad.component';
-import {GlobalSignaturePadConfig} from './tokens/default-config.token';
+import {ObjToArrayPipe} from './pipes/obj-to-array.pipe';
 import {GLOBAL_SIGNATURE_PAD_CONFIG} from './signature-pad-global-config';
-import { ObjToArrayPipe } from './pipes/obj-to-array.pipe';
-import {SignaturePadCardGroupComponent} from './components/signature-pad-card-group/signature-pad-card-group.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {GlobalSignaturePadConfig} from './tokens/default-config.token';
+
+export {GlobalSignaturePadConfig} from './tokens/default-config.token';
+export {GLOBAL_SIGNATURE_PAD_CONFIG} from './signature-pad-global-config';
 
 export {isArray} from './validators/is-array.validation';
 export {consistOfArrays} from './validators/consists-of-arrays.validation';
@@ -25,7 +28,10 @@ export class AngularSignaturePadModule {
     return {
       providers: [
         ObjToArrayPipe,
-        { provide: GlobalSignaturePadConfig, useValue: GLOBAL_SIGNATURE_PAD_CONFIG }
+        {
+          provide: GlobalSignaturePadConfig,
+          useValue: GLOBAL_SIGNATURE_PAD_CONFIG
+        }
       ],
       ngModule: AngularSignaturePadModule
     };

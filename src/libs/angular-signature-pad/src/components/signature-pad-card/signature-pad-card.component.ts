@@ -45,9 +45,4 @@ export class SignaturePadCardComponent extends SignaturePadControlComponent impl
     super(renderer, parentFormContainer, defaultConfig);
   }
 
-  clear() {
-    this.signaturePad.clear();
-    this.control.reset('');
-  }
-
 }
