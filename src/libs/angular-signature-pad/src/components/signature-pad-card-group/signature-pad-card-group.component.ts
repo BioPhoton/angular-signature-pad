@@ -33,9 +33,4 @@ export class SignaturePadCardGroupComponent implements OnInit {
     this.control = this.group.get(this.config.name) as FormControl;
   }
 
-  clear() {
-    this.signaturePad.clear();
-    this.control.reset('');
-  }
-
 }
