@@ -13,6 +13,7 @@
     "update-node_modules": "npm run build:package && copyfiles -u 4 src/libs/angular-signature-pad/dist/**/* node_modules/angular-signature-pad/",
     "build:github-page": "ng build --prod --output-path docs --base-href /angular-signature-pad-example/",
     "coverage": "ng test --progress=false --watch=false --code-coverage",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "docs": "npm run docs:build",
     "docs:build": "compodoc ./src/libs -p tsconfig.json -n angular-signature-pad -d docs --hideGenerator",
     "docs:serve": "npm run docs:build -- -s",
