@@ -25,11 +25,7 @@ export class AngularSignaturePadModule {
   static forRoot(): ModuleWithProviders {
     return {
       providers: [
-        ObjToArrayPipe,
-        {
-          provide: GlobalSignaturePadConfig,
-          useValue: GLOBAL_SIGNATURE_PAD_CONFIG
-        }
+        ObjToArrayPipe
       ],
       ngModule: AngularSignaturePadModule
     };
