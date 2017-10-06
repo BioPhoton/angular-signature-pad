@@ -5,7 +5,6 @@ Use it to draw smooth signatures based on HTML5 canvas and uses variable width B
 [SignaturePad](https://github.com/szimek/signature_pad) is used a the vanilla implementation.
 
 
-
 ## Quick code example
 
 ``` html
