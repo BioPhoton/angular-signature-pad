@@ -21,7 +21,7 @@ export class SignaturePadCardGroupComponent implements OnInit {
   control: FormControl;
 
   @ViewChild('signaturePad')
-  signaturePad: SignaturePadControlComponent;
+  signaturePadControl: SignaturePadControlComponent;
 
   constructor() {
 
@@ -29,8 +29,12 @@ export class SignaturePadCardGroupComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log('this.group.get(this.config.name)', this.group, this.group.get(this.config.name))
+    console.log('this.group.get(this.config.name)', this.group, this.group.get(this.config.name));
     this.control = this.group.get(this.config.name) as FormControl;
+  }
+
+  clear() {
+    this.signaturePadControl.clear();
   }
 
 }
