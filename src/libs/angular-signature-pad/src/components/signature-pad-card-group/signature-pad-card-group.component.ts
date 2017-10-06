@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup} from '@angular/forms';
+import {AbstractControl, FormControl} from '@angular/forms';
 import {SignaturePadControlComponent} from '../signature-pad-control/signature-pad-control.component';
 
 @Component({
@@ -29,7 +29,6 @@ export class SignaturePadCardGroupComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log('this.group.get(this.config.name)', this.group, this.group.get(this.config.name));
     this.control = this.group.get(this.config.name) as FormControl;
   }
 
