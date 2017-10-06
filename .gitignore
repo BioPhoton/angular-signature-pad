@@ -2,7 +2,7 @@
 
 # development files
 /coverage
-
+/example-dist
 
 # compiled output
 /dist
