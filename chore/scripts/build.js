@@ -39,10 +39,16 @@ async function packaging () {
   copyStyles()
 }
 
-function copyStyles () {
+function copyStyles() {
   const source = path.join(libPath, 'src', 'styles.scss')
   const target = path.join(libPath, 'dist', 'styles.scss')
   copyFile(source, target)
+  // the signature is
+  // copyfiles(paths, opts, callback)
+  // with
+  // paths being an array of the input paths and the output being the last path
+  // and config being an object where the names correspond to the flags
+  // so you'd want it to be {up: 3}
 }
 /**/
 
