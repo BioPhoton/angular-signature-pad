@@ -19,8 +19,11 @@
   "bugs": {
     "url": "https://github.com/BioPhoton/angular-signature-pad/issues"
   },
-  "private": true,
   "peerDependencies": {
-    "signature_pad": "^2.2.1"
+    "@angular/core": "^4.2.4",
+    "@angular/forms": "^4.2.4",
+    "rxjs": "^5.4.2",
+    "zone.js": "^0.8.14",
+    "signature_pad": "^2.3.2"
   }
 }
