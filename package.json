@@ -1,7 +1,24 @@
 {
-  "name": "dev-angular-signature-pad",
+  "name": "angular-signature-pad",
   "version": "0.0.1",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BioPhoton/angular-signature-pad"
+  },
+  "author": {
+    "name": "Michael Hladky",
+    "email": "michael@hladky.at"
+  },
+  "keywords": [
+    "angular",
+    "signature pad",
+    "canvas",
+    "signature"
+  ],
+  "bugs": {
+    "url": "https://github.com/BioPhoton/angular-signature-pad/issues"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -34,7 +51,6 @@
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",
     "rxjs": "^5.4.2",
-    "signature_pad": "^2.3.2",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

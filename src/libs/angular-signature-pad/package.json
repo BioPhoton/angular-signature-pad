@@ -2,6 +2,23 @@
   "name": "angular-signature-pad",
   "version": "0.0.1",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BioPhoton/angular-signature-pad"
+  },
+  "author": {
+    "name": "Michael Hladky",
+    "email": "michael@hladky.at"
+  },
+  "keywords": [
+    "angular",
+    "signature pad",
+    "canvas",
+    "signature"
+  ],
+  "bugs": {
+    "url": "https://github.com/BioPhoton/angular-signature-pad/issues"
+  },
   "private": true,
   "peerDependencies": {
     "signature_pad": "^2.2.1"
