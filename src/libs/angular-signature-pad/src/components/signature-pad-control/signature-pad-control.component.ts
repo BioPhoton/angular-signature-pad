@@ -18,7 +18,7 @@ import {
   NG_VALUE_ACCESSOR
 } from '@angular/forms';
 import {ISignaturePadConfig} from '../../interfaces/signature-pad-config.interface';
-import {GlobalSignaturePadConfig} from '../../tokens/default-config.token';
+import {GlobalSignaturePadConfig} from '../../tokens/global-config.token';
 import {SignaturePadComponent} from '../signature-pad/signature-pad.component';
 
 @Component({

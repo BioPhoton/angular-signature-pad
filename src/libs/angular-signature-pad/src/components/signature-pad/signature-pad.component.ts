@@ -15,7 +15,7 @@ import {
 } from '@angular/core';
 import SignaturePad from 'signature_pad';
 import {ISignaturePadConfig} from '../../interfaces/signature-pad-config.interface';
-import {GlobalSignaturePadConfig} from '../../tokens/default-config.token';
+import {GlobalSignaturePadConfig} from '../../tokens/global-config.token';
 
 @Component({
   selector: 'signature-pad',

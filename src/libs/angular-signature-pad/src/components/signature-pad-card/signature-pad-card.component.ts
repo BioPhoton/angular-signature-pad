@@ -13,7 +13,7 @@ import {
 } from '@angular/core';
 import {ControlContainer, FormControl, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {ISignaturePadConfig} from '../../interfaces/signature-pad-config.interface';
-import {GlobalSignaturePadConfig} from '../../tokens/default-config.token';
+import {GlobalSignaturePadConfig} from '../../tokens/global-config.token';
 import {SignaturePadControlComponent} from '../signature-pad-control/signature-pad-control.component';
 
 @Component({

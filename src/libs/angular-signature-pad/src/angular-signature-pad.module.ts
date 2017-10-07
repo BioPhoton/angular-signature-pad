@@ -6,9 +6,9 @@ import {SignaturePadCardComponent} from './components/signature-pad-card/signatu
 import {SignaturePadControlComponent} from './components/signature-pad-control/signature-pad-control.component';
 import {SignaturePadComponent} from './components/signature-pad/signature-pad.component';
 import {ObjToArrayPipe} from './pipes/obj-to-array.pipe';
-import {GlobalSignaturePadConfig} from './tokens/default-config.token';
+import {GlobalSignaturePadConfig} from './tokens/global-config.token';
 
-export {GlobalSignaturePadConfig} from './tokens/default-config.token';
+export {GlobalSignaturePadConfig} from './tokens/global-config.token';
 
 export {isArray} from './validators/is-array.validation';
 export {consistOfArrays} from './validators/consists-of-arrays.validation';

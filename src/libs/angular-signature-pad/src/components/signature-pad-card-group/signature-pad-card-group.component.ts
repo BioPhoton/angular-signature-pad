@@ -27,7 +27,6 @@ export class SignaturePadCardGroupComponent implements OnInit {
 
   }
 
-
   ngOnInit() {
     this.control = this.group.get(this.config.name) as FormControl;
   }
