@@ -26,7 +26,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:package": "node ./chore/scripts/build",
+    "build:package": "node ./chore/scripts/tasks/build",
     "update-node_modules": "npm run build:package && copyfiles -u 4 src/libs/angular-signature-pad/dist/**/* node_modules/angular-signature-pad/",
     "build:github-page": "ng build --prod --output-path docs --base-href /angular-signature-pad/",
     "coverage": "ng test --progress=false --watch=false --code-coverage",
