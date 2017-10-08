@@ -11,7 +11,10 @@ const utils = require(path.join(__base, 'chore', 'scripts', 'utils'))
 
 process.env.DEBUG = config.debugMode
 
-return new Promise((resolve, reject) => {
+return exec('git pull --rebase', {cwd: __base})
+;
+
+/*new Promise((resolve, reject) => {
   rimraf(path.join(__base, 'coverage'), function (err) {
     if (err) {
       reject(err)
@@ -20,5 +23,11 @@ return new Promise((resolve, reject) => {
     resolve()
   })
 })
-  .then(() => exec('git pull --rebase', {cwd: __base}))
-  .then(() => exec('npm install', {cwd: __base}))
+  .then(() => */exec('git pull --rebase', {cwd: __base})//)
+  .then(() => {
+    console.log('start npm install');
+    return exec('npm install', {cwd: __base})
+  })
+  .then(() => {
+    console.log('end npm install');
+  })
