@@ -11,7 +11,7 @@ const utils = require(path.join(__base, 'chore', 'scripts', 'utils'))
 module.exports = refresh
 
 function refresh() {
-return utils.deleteFile(path.join(__base, '_node_modules'))
+return utils.deleteFile(path.join(__base, 'coverage'))
   // pulls the latest version
   .then(() => {
     console.info('start git pull --rebase')
