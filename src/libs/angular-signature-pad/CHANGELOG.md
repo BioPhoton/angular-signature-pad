@@ -1,3 +1,8 @@
+<a name="0.0.14"></a>
+## [0.0.14](https://github.com/BioPhoton/angular-signature-pad/compare/0.0.13...0.0.14) (2017-10-08)
+
+
+
 <a name="0.0.6"></a>
 ## [0.0.6](https://github.com/BioPhoton/angular-signature-pad/compare/0.0.5...0.0.6) (2017-10-08)
 
