@@ -1,7 +1,7 @@
 'use strict'
 
-const config = require('../config')
-const utils = require('./utils')
+const config = require('../../config')
+const utils = require('../utils')
 
 const fs = require('fs')
 const path = require('path')
@@ -14,18 +14,22 @@ const ngPackagr = require(path.join(__base, 'node_modules/ng-packagr/lib/ng-pack
 
 process.env.DEBUG = config.debugMode
 
-const buildProcess = Promise.resolve()
-  .then(res => {
-    console.log('res: ', res)
-    return packaging()
-  })
-  .then((r) => {
-    console.info('start copy')
-    return copyStyles()
-  })
-  .catch((e) => {
-    console.error('BuildProcessError: ', e)
-  })
+module.exports = build
+
+function build () {
+  return Promise.resolve()
+    .then(res => {
+      console.log('res: ', res)
+      return packaging()
+    })
+    .then((r) => {
+      console.info('start copy')
+      return copyStyles()
+    })
+    .catch((e) => {
+      console.error('BuildProcessError: ', e)
+    })
+}
 
 // build scripts
 // =============================================================================
@@ -47,5 +51,5 @@ async function packaging () {
 function copyStyles () {
   const source = path.join(config.libPath, 'src', 'styles.scss')
   const target = path.join(config.libPath, 'dist', 'styles.scss')
-  return utils.copyFile(source, target, (r) => console.log('copy done'))
+  return utils.copyFile(source, target, (r) => console.log('copy styles done'))
 }
