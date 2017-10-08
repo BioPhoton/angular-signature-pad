@@ -6,7 +6,6 @@ node_js:
 cache:
   directories:
 
-
 install:
   - npm i
 

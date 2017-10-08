@@ -1,6 +1,7 @@
 'use strict'
 
 const config = require('../config')
+const utils = require('./utils')
 
 const fs = require('fs')
 const path = require('path')
@@ -9,19 +10,21 @@ const copyfiles = require('copyfiles')
 const exec = util.promisify(require('child_process').exec)
 
 // config
-const ngPackagr = require(path.join(__base,'node_modules/ng-packagr/lib/ng-packagr'))
+const ngPackagr = require(path.join(__base, 'node_modules/ng-packagr/lib/ng-packagr'))
 
 process.env.DEBUG = config.debugMode
 
 const buildProcess = Promise.resolve()
   .then(res => {
+    console.log('res: ', res)
     return packaging()
   })
   .then((r) => {
+    console.info('start copy')
     return copyStyles()
   })
   .catch((e) => {
-    console.log('e: ', e);
+    console.error('BuildProcessError: ', e)
   })
 
 // build scripts
@@ -30,27 +33,19 @@ const buildProcess = Promise.resolve()
 async function packaging () {
   await ngPackagr.ngPackage({project: path.join(config.libPath, 'ng-package.json')})
     .then((res) => {
-      console.log('done packaging')
+      console.info('done packaging')
     })
     .catch((err) => {
       console.error('Build failed.', err)
       process.exit(1)
     })
-  const {stdout, stderr} = await exec('npm pack', {cwd: path.join(config.libPath, 'dist')}, (error, stdout, stderr) => { console.log('done npm pack')})
+  const {stdout, stderr} = await exec('npm pack', {cwd: path.join(config.libPath, 'dist')})
+  console.info('done npm pack')
   return {stdout, stderr}
 }
 
-function copyStyles() {
+function copyStyles () {
   const source = path.join(config.libPath, 'src', 'styles.scss')
   const target = path.join(config.libPath, 'dist', 'styles.scss')
-
-  return new Promise(
-    function(resolve, reject) {
-      copyfiles([source, target], {up:1}, (err) => {
-        console.log('copy done');
-        err ? reject(err) : resolve([source, target]);
-      })
-    });
+  return utils.copyFile(source, target, (r) => console.log('copy done'))
 }
-
-
