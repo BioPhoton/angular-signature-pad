@@ -2,7 +2,7 @@
 
 This project provides components and utils for digital signatures. 
 Use it to draw smooth signatures based on HTML5 canvas and uses variable width Bézier curve interpolation. 
-[SignaturePad](https://github.com/szimek/signature_pad) is used a the vanilla implementation.
+[SignaturePad](https://github.com/szimek/signature_pad) is used as the vanilla implementation.
 
 ![Angular-Signature-Pad](https://raw.githubusercontent.com/BioPhoton/angular-signature-pad/master/resources/demo.gif)
 
