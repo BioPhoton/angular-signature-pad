@@ -9,7 +9,7 @@ Use it to draw smooth signatures based on HTML5 canvas and uses variable width B
 # DEMO
 
 - [ ] [Live Demo](https://biophoton.github.io/angular-signature-pad)
-- [ ] [cli-project](https://github.io/BioPhoton/angular-signature-pad)
+- [ ] [cli-project](https://github.com/BioPhoton/angular-signature-pad)
 
 ## Quick code example
 
