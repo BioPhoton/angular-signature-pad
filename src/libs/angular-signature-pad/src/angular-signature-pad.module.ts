@@ -12,7 +12,7 @@ export {GlobalSignaturePadConfig} from './tokens/global-config.token';
 
 export {isArray} from './validators/is-array.validation';
 export {consistOfArrays} from './validators/consists-of-arrays.validation';
-export {consistOfObjects} from './validators/constists-of-object.validation';
+export {consistOfObjects} from './validators/consists-of-object.validation';
 export {minLines} from './validators/min-lines.validation';
 export {minPointsInEachNLines} from './validators/min-points-in-each-n-lines.validator';
 
